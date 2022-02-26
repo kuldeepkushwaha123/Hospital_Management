@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+<style>
+    body{
+
+          margin: 0px;
+          padding: 0px;
+          background-image: url('media/img/R10.jpg');
+         }
+     .left {
+                /*border: 2px solid blue;*/
+                display: inline-block;
+                position: absolute;
+                left: 34px;
+                top: 20px;
+                text-align: center;
+                font-family: cursive;
+            }
+
+            .left img {
+                width: 45px;
+                
+
+            }
+
+            .mid {
+                display: block;
+                width: 45%;
+                margin: 29px auto;
+               /* border: 2px solid red;*/
+            }
+
+            .right {
+                position: absolute;
+                right: 43px;
+                top: 36px;
+                display: inline-block;
+               /* border: 2px solid black;*/
+            }
+
+            .navbar {
+                display: inline-block;
+
+
+            }
+
+            .navbar li {
+                display: inline-block;
+                font-size: 20px;
+
+            }
+
+            .navbar li a {
+                color: black;
+                text-decoration: none;
+                padding: 32px 23px;
+
+            }
+
+            .navbar li a:hover,
+            .navbar li a.active {
+                text-decoration: underline;
+                color: rgb(235, 13, 13);
+            }
+
+            .btn {
+                font-family: 'Baloo Bhaijaan 2', cursive;
+                margin: 0px 9px;
+                background-color: black;
+                color: white;
+                padding: 4px 14px;
+                border: 2px solid grey;
+                border-radius: 10px;
+                font-size: 15px;
+                cursor: pointer;
+            }
+
+            .btn:hover {
+                color: aqua;
+            }
+
+            #u {
+                color: green;
+            }
+
+            .container {
+
+                border: 2px solid black;
+                margin: 40px 453px;
+                padding: 53px;
+                width: 38%;
+                border-radius: 28px;
+
+            }
+
+            .formgroup input {
+                font-family: 'Baloo Bhaijaan 2', cursive;
+                text-align: center;
+                display: block;
+                width: 379px;
+                padding: 6px;
+                border: 2px solid green;
+                margin: 10px auto;
+                font-size: 21px;
+                border-radius: 15px;
+            }
+
+            .container h1 {
+                text-align: center;
+            }
+
+            .container button {
+                display: block;
+                width: 400px;
+                margin: 21px auto;
+                text-align: center;
+            }
+</style>
+</head>
+
+<body>
+<nav>
+    <header class="header">
+            <!-- Left box for logo  -->
+            <div class="left">
+                <img src="media/img/R11.jpg" alt="logo">
+                <div> <h2>City Hospital Rewa</h2></div>
+            </div>
+            <!-- mid box for navbar -->
+            <div class="mid">
+                <ul class="navbar">
+                    <li><a href="#" class="active ">Home</a></li>
+                    <li><a href="#" id="k">About Us</a></li>
+                    <li><a href="#" id=u>Hospital center</a></li>
+                    <li><a href="#" id=l>Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Right box for buttons  -->
+            <div class="right">
+                <button class="btn">Call Us Now</button>
+                <button class="btn">Email Us</button>
+
+            </div>
+        </header>
+    </nav>
+     {% for i in messages %}
+    <center><h1 style="color:red">{{i}}</h1></center>
+     {% endfor %}
+     <div class="container">
+            <h1> Visit The Best Hospital oF Rewa Now </h1>
+            <form  method="POST" action="">
+                {% csrf_token %}
+
+                <div class="formgroup">
+                    <input type="text" name="name" value="" placeholder="Enter Your Name" required>
+                </div>
+                <div class="formgroup">
+                    <input type="text" name="age" value="" placeholder="Enter Your Age"required>
+                </div>
+                <div class="formgroup">
+                    <input type="text" name="mobile"value=""  placeholder="Enter Your Phone"required>
+                </div>
+                <div class="formgroup">
+                    <input type="text" name="address"value="" placeholder="Enter Your Address"required>
+                </div>
+                <div class="formgroup">
+                    <input type="text" name="gender"value="" placeholder="Enter Your Gender"required>
+                </div>
+
+
+                <button  value="Submit" class="btn">Book Appointment</button>
+            </form>
+        </div>
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
